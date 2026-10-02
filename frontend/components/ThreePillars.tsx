@@ -43,14 +43,14 @@ const PILLARS = [
       "Grammar & tone polish",
       "Before / after preview",
     ],
-       cta: "Rewrite Now",
-       href: "/modify",
+    cta: "Rewrite Now",
+    href: "/modify",
   },
 ];
 
 export default function ThreePillars() {
   return (
-    <section id="pillars" className="bg-white py-20 md:py-28">
+    <section id="pillars" className="hidden md:block bg-white py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
           <div className="inline-block mb-3 px-4 py-1.5 bg-brand-red/10 text-brand-red text-xs font-bold uppercase tracking-wider rounded-full">

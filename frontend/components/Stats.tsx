@@ -7,7 +7,7 @@ const STATS = [
 
 export default function Stats() {
   return (
-    <section className="bg-slate-900 py-12 sm:py-16">
+    <section className="hidden sm:block bg-slate-900 py-12 sm:py-16">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
         {STATS.map((s) => (
           <div key={s.label} className="text-center">
