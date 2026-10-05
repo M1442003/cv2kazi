@@ -6,6 +6,7 @@ export type CVData = {
   email: string;
   phone: string;
   location: string;
+  photo?: string;
   summary: string;
   education: { school: string; degree: string; year: string }[];
   experience: {
@@ -17,12 +18,12 @@ export type CVData = {
   skills: string;
   languages: string;
 };
-
 export const EMPTY_CV: CVData = {
   fullName: "",
   email: "",
   phone: "",
   location: "",
+  photo: "",
   summary: "",
   education: [{ school: "", degree: "", year: "" }],
   experience: [{ role: "", company: "", dates: "", bullets: "" }],
@@ -87,9 +88,55 @@ export default function CVBuilder({
 
   return (
     <div className="space-y-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+
       {/* Contact */}
       <section>
         <h3 className="font-bold text-slate-900 mb-3">👤 Contact</h3>
+
+        {/* Photo upload */}
+        <div className="flex items-center gap-4 mb-4">
+          {data.photo ? (
+            <img
+              src={data.photo}
+              alt="Profile"
+              className="w-16 h-16 rounded-full object-cover border-2 border-slate-200"
+            />
+          ) : (
+            <div className="w-16 h-16 rounded-full bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center text-2xl text-slate-400">
+              👤
+            </div>
+          )}
+          <div>
+            <label className="cursor-pointer bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold px-4 py-2 rounded-full transition inline-block">
+              {data.photo ? "Change photo" : "Upload photo"}
+              <input
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={(e) => {
+                  const f = e.target.files?.[0];
+                  if (!f) return;
+                  const reader = new FileReader();
+                  reader.onload = () => set("photo", reader.result as string);
+                  reader.readAsDataURL(f);
+                }}
+              />
+            </label>
+            {data.photo && (
+              <button
+                type="button"
+                onClick={() => set("photo", "")}
+                className="ml-2 text-xs text-red-600 hover:underline"
+              >
+                Remove
+              </button>
+            )}
+            <p className="text-xs text-slate-500 mt-1">
+              Optional. Only used on templates with photo support.
+            </p>
+          </div>
+        </div>
+
         <div className="grid sm:grid-cols-2 gap-3">
           <input
             placeholder="Full name"

@@ -12,23 +12,17 @@ const TEMPLATES: {
   name: string;
   tagline: string;
 }[] = [
-  {
-    id: "classic",
-    name: "Classic",
-    tagline: "Traditional · safest for conservative roles",
-  },
-  {
-    id: "modern",
-    name: "Modern",
-    tagline: "Colored header · great for tech & startups",
-  },
-  {
-    id: "minimal",
-    name: "Minimal",
-    tagline: "Clean · elegant · everything or nothing",
-  },
-];
-
+    { id: "classic", name: "Classic", tagline: "Traditional · safest for conservative roles" },
+    { id: "modern", name: "Modern", tagline: "Colored header · great for tech" },
+    { id: "minimal", name: "Minimal", tagline: "Clean · elegant · simple" },
+    { id: "executive", name: "Executive", tagline: "Photo · senior roles" },
+    { id: "corporate", name: "Corporate", tagline: "Photo · banks, NGOs" },
+    { id: "creative", name: "Creative", tagline: "Photo · designers, marketers" },
+    { id: "two-column", name: "Two-Column", tagline: "Sidebar layout · dense" },
+    { id: "compact", name: "Compact", tagline: "1-page · tight" },
+    { id: "elegant", name: "Elegant", tagline: "Photo · consultants" },
+    { id: "bold", name: "Bold", tagline: "Photo · sales, growth" },
+  ];
 const COLOR_IDS = Object.keys(TEMPLATE_COLORS) as TemplateColorId[];
 
 export default function TemplatePicker({
@@ -48,17 +42,16 @@ export default function TemplatePicker({
         Choose a template
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-5">
         {TEMPLATES.map((t) => {
           const active = value === t.id;
           return (
             <div
               key={t.id}
-              className={`rounded-2xl border bg-white p-4 transition shadow-sm ${
-                active
-                  ? "border-brand-red shadow-md ring-2 ring-brand-red/20"
-                  : "border-slate-200 hover:shadow-md hover:border-slate-300"
-              }`}
+              className={`rounded-2xl border bg-white p-4 transition shadow-sm ${active
+                ? "border-brand-red shadow-md ring-2 ring-brand-red/20"
+                : "border-slate-200 hover:shadow-md hover:border-slate-300"
+                }`}
             >
               {/* Template preview (click to select) */}
               <button
@@ -133,11 +126,10 @@ export default function TemplatePicker({
                       }}
                       aria-label={c.label}
                       title={c.label}
-                      className={`w-5 h-5 rounded-full transition-all border-2 ${
-                        isActive
-                          ? "border-slate-900 scale-110"
-                          : "border-transparent hover:scale-110"
-                      }`}
+                      className={`w-5 h-5 rounded-full transition-all border-2 ${isActive
+                        ? "border-slate-900 scale-110"
+                        : "border-transparent hover:scale-110"
+                        }`}
                       style={{ background: c.hex }}
                     />
                   );
