@@ -1,5 +1,5 @@
 const STATS = [
-  { value: "5,000+", label: "CVs analyzed" },
+  { value: "10k+", label: "CVs analyzed" },
   { value: "82%", label: "Average score improvement" },
   { value: "3 min", label: "Average fix time" },
   { value: "100%", label: "Free to start" },
