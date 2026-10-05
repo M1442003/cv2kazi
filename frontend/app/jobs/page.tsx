@@ -129,7 +129,7 @@ export default function JobsPage() {
         {/* Results */}
         {jobs && jobs.length === 0 && (
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center">
-            <div className="text-4xl mb-3">😕</div>
+            <div className="text-4xl mb-3"></div>
             <div className="font-bold text-slate-900 mb-1">
               No matching jobs found
             </div>
@@ -189,7 +189,7 @@ function JobCard({ job }: { job: Job }) {
             {job.location} · {job.type}
           </div>
           <div className="text-xs text-slate-500 mt-1">
-            💰 {job.salary} · Posted {job.posted}
+             {job.salary} · Posted {job.posted}
           </div>
 
           <p className="text-sm text-slate-700 mt-3 leading-relaxed">
@@ -199,7 +199,7 @@ function JobCard({ job }: { job: Job }) {
           {job.match.missing_keywords.length > 0 && (
             <div className="mt-4">
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
-                ⚠️ Consider adding these to your CV
+                Consider adding these to your CV
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {job.match.missing_keywords.map((kw) => (
