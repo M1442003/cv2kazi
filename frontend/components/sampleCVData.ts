@@ -7,7 +7,7 @@ const SAMPLE_PHOTO =
       <defs>
         <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#FCA5A5"/>
-          <stop offset="100%" stop-color="#DC2626"/>
+          <stop offset="100%" stop-color="#2681dc"/>
         </linearGradient>
       </defs>
       <rect width="200" height="200" fill="url(#bg)"/>
@@ -17,10 +17,10 @@ const SAMPLE_PHOTO =
   `);
 
 export const SAMPLE_CV: CVData = {
-  fullName: "Amina Hassan",
-  email: "amina.hassan@email.com",
-  phone: "+255 712 345 678",
-  location: "Dar es Salaam, Tanzania",
+  fullName: "Alhurt Hassan",
+  email: "alhurt.hassan@email.com",
+  phone: "+255 625 334 067",
+  location: "Zanzibar, Tanzania",
   photo: SAMPLE_PHOTO,
   summary:
     "Motivated Software Engineer with 3+ years building web applications for fintech and telecom. Skilled in React, Python, and cloud deployment. Passionate about solving local problems with technology.",
