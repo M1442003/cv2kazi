@@ -69,8 +69,12 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-500">
           <div>© {new Date().getFullYear()} CV2Kazi. Made in Tanzania 🇹🇿</div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-slate-300">Privacy</a>
-            <a href="#" className="hover:text-slate-300">Terms</a>
+            <Link href="/privacy" className="hover:text-slate-300">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-slate-300">
+              Terms
+            </Link>
           </div>
         </div>
       </div>
