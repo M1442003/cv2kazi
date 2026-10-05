@@ -11,7 +11,7 @@ export default function TermsPage() {
           href="/"
           className="text-sm text-slate-500 hover:text-brand-red transition mb-4 inline-block"
         >
-          ← Back to home
+          🔙 Back to home
         </Link>
 
         <h1 className="text-2xl sm:text-3xl font-extrabold mb-2 text-slate-900">
@@ -84,10 +84,10 @@ export default function TermsPage() {
             <p>
               Questions? Email{" "}
               <a
-                href="mailto:hello@cv2kazi.tz"
+                href="mailto:husseinmatolak@gmail.com"
                 className="text-brand-red underline"
               >
-                hello@cv2kazi.tz
+                husseinmatolak@gmail.com
               </a>
             </p>
           </section>
