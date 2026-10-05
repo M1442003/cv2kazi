@@ -1,5 +1,21 @@
 import type { CVData } from "./CVBuilder";
 
+const SAMPLE_PHOTO =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+      <defs>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FCA5A5"/>
+          <stop offset="100%" stop-color="#DC2626"/>
+        </linearGradient>
+      </defs>
+      <rect width="200" height="200" fill="url(#bg)"/>
+      <circle cx="100" cy="80" r="32" fill="#ffffff" opacity="0.9"/>
+      <path d="M40 200 Q40 130 100 130 Q160 130 160 200 Z" fill="#ffffff" opacity="0.9"/>
+    </svg>
+  `);
+
 export const SAMPLE_CV: CVData = {
   fullName: "Amina Hassan",
   email: "amina.hassan@email.com",
