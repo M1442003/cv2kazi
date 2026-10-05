@@ -21,6 +21,7 @@ export const SAMPLE_CV: CVData = {
   email: "amina.hassan@email.com",
   phone: "+255 712 345 678",
   location: "Dar es Salaam, Tanzania",
+  photo: SAMPLE_PHOTO,
   summary:
     "Motivated Software Engineer with 3+ years building web applications for fintech and telecom. Skilled in React, Python, and cloud deployment. Passionate about solving local problems with technology.",
   education: [
