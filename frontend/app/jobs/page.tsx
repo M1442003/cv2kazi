@@ -66,7 +66,7 @@ export default function JobsPage() {
           href="/"
           className="text-sm text-slate-500 hover:text-brand-red transition mb-4 inline-block"
         >
-          ← Back to home
+          ⏪Back to home
         </Link>
 
         <header className="mb-8">
@@ -221,7 +221,7 @@ function JobCard({ job }: { job: Job }) {
           rel="noopener noreferrer"
           className="bg-brand-lightblue hover:bg-brand-blue text-white text-sm font-semibold px-5 py-2.5 rounded-full transition whitespace-nowrap self-start"
         >
-          Apply Now →
+          Apply Now
         </a>
       </div>
     </div>
