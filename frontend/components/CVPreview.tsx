@@ -3,31 +3,68 @@ import type { CVData } from "./CVBuilder";
 
 export type TemplateId = "classic" | "modern" | "minimal";
 
+export type TemplateColorId =
+  | "red"
+  | "blue"
+  | "green"
+  | "purple"
+  | "orange"
+  | "slate";
+
+export const TEMPLATE_COLORS: Record<
+  TemplateColorId,
+  { hex: string; label: string }
+> = {
+  red:    { hex: "#DC2626", label: "Red" },
+  blue:   { hex: "#1E3A8A", label: "Blue" },
+  green:  { hex: "#059669", label: "Green" },
+  purple: { hex: "#7C3AED", label: "Purple" },
+  orange: { hex: "#EA580C", label: "Orange" },
+  slate:  { hex: "#334155", label: "Slate" },
+};
+
 export default function CVPreview({
   data,
   template = "classic",
   id = "cv-preview",
+  color = "red",
 }: {
   data: CVData;
   template?: TemplateId;
   id?: string;
+  color?: TemplateColorId;
 }) {
-  if (template === "modern") return <ModernTemplate data={data} id={id} />;
-  if (template === "minimal") return <MinimalTemplate data={data} id={id} />;
-  return <ClassicTemplate data={data} id={id} />;
+  const accent = TEMPLATE_COLORS[color].hex;
+
+  if (template === "modern")
+    return <ModernTemplate data={data} id={id} accent={accent} />;
+  if (template === "minimal")
+    return <MinimalTemplate data={data} id={id} accent={accent} />;
+  return <ClassicTemplate data={data} id={id} accent={accent} />;
 }
 
 /* ============================================================
-   CLASSIC — serif, traditional, safest for conservative employers
+   CLASSIC
    ============================================================ */
-function ClassicTemplate({ data, id }: { data: CVData; id: string }) {
+function ClassicTemplate({
+  data,
+  id,
+  accent,
+}: {
+  data: CVData;
+  id: string;
+  accent: string;
+}) {
   return (
     <div
       id={id}
       className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-slate-900"
       style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
     >
-      <div className="border-b-2 border-slate-900 pb-4 mb-5 text-center">
+      <div
+        className="border-b-2 pb-4 mb-5 text-center"
+        style={{ borderColor: accent }}
+      >
         <h1 className="text-3xl font-bold">
           {data.fullName || "Your Name"}
         </h1>
@@ -129,21 +166,28 @@ function ClassicTemplate({ data, id }: { data: CVData; id: string }) {
 }
 
 /* ============================================================
-   MODERN — colored header, sans-serif, borders
+   MODERN
    ============================================================ */
-function ModernTemplate({ data, id }: { data: CVData; id: string }) {
+function ModernTemplate({
+  data,
+  id,
+  accent,
+}: {
+  data: CVData;
+  id: string;
+  accent: string;
+}) {
   return (
     <div
       id={id}
       className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden"
       style={{ fontFamily: "Inter, system-ui, sans-serif" }}
     >
-      {/* Colored header band */}
-      <div className="bg-brand-red text-white px-8 py-6">
+      <div className="text-white px-8 py-6" style={{ background: accent }}>
         <h1 className="text-3xl font-extrabold tracking-tight">
           {data.fullName || "Your Name"}
         </h1>
-        <div className="text-xs mt-2 flex flex-wrap gap-x-4 gap-y-1 text-red-100">
+        <div className="text-xs mt-2 flex flex-wrap gap-x-4 gap-y-1 text-white/80">
           {data.email && <span>✉ {data.email}</span>}
           {data.phone && <span>☎ {data.phone}</span>}
           {data.location && <span>📍 {data.location}</span>}
@@ -153,7 +197,10 @@ function ModernTemplate({ data, id }: { data: CVData; id: string }) {
       <div className="p-8 space-y-5">
         {data.summary && (
           <section>
-            <h2 className="text-xs font-bold uppercase tracking-wider text-brand-red mb-2">
+            <h2
+              className="text-xs font-bold uppercase tracking-wider mb-2"
+              style={{ color: accent }}
+            >
               Profile
             </h2>
             <p className="text-sm leading-relaxed text-slate-700">
@@ -164,12 +211,19 @@ function ModernTemplate({ data, id }: { data: CVData; id: string }) {
 
         {data.experience.some((e) => e.role || e.company) && (
           <section>
-            <h2 className="text-xs font-bold uppercase tracking-wider text-brand-red mb-3">
+            <h2
+              className="text-xs font-bold uppercase tracking-wider mb-3"
+              style={{ color: accent }}
+            >
               Experience
             </h2>
             <div className="space-y-4">
               {data.experience.map((exp, i) => (
-                <div key={i} className="border-l-2 border-brand-red/20 pl-3">
+                <div
+                  key={i}
+                  className="border-l-2 pl-3"
+                  style={{ borderColor: `${accent}33` }}
+                >
                   <div className="flex justify-between items-baseline">
                     <div className="font-bold text-slate-900">
                       {exp.role || "Role"}
@@ -177,7 +231,10 @@ function ModernTemplate({ data, id }: { data: CVData; id: string }) {
                     <div className="text-xs text-slate-500">{exp.dates}</div>
                   </div>
                   {exp.company && (
-                    <div className="text-sm text-brand-red font-medium">
+                    <div
+                      className="text-sm font-medium"
+                      style={{ color: accent }}
+                    >
                       {exp.company}
                     </div>
                   )}
@@ -200,7 +257,10 @@ function ModernTemplate({ data, id }: { data: CVData; id: string }) {
         <div className="grid grid-cols-2 gap-6">
           {data.education.some((e) => e.school) && (
             <section>
-              <h2 className="text-xs font-bold uppercase tracking-wider text-brand-red mb-3">
+              <h2
+                className="text-xs font-bold uppercase tracking-wider mb-3"
+                style={{ color: accent }}
+              >
                 Education
               </h2>
               <div className="space-y-2">
@@ -225,7 +285,10 @@ function ModernTemplate({ data, id }: { data: CVData; id: string }) {
 
           {data.skills && (
             <section>
-              <h2 className="text-xs font-bold uppercase tracking-wider text-brand-red mb-3">
+              <h2
+                className="text-xs font-bold uppercase tracking-wider mb-3"
+                style={{ color: accent }}
+              >
                 Skills
               </h2>
               <div className="text-sm text-slate-700 whitespace-pre-wrap">
@@ -237,7 +300,10 @@ function ModernTemplate({ data, id }: { data: CVData; id: string }) {
 
         {data.languages && (
           <section>
-            <h2 className="text-xs font-bold uppercase tracking-wider text-brand-red mb-2">
+            <h2
+              className="text-xs font-bold uppercase tracking-wider mb-2"
+              style={{ color: accent }}
+            >
               Languages
             </h2>
             <p className="text-sm text-slate-700">{data.languages}</p>
@@ -249,16 +315,27 @@ function ModernTemplate({ data, id }: { data: CVData; id: string }) {
 }
 
 /* ============================================================
-   MINIMAL — clean, no color, lots of whitespace, elegant
+   MINIMAL
    ============================================================ */
-function MinimalTemplate({ data, id }: { data: CVData; id: string }) {
+function MinimalTemplate({
+  data,
+  id,
+  accent,
+}: {
+  data: CVData;
+  id: string;
+  accent: string;
+}) {
   return (
     <div
       id={id}
       className="bg-white p-10 rounded-2xl shadow-sm border border-slate-200 text-slate-900"
       style={{ fontFamily: "Inter, system-ui, sans-serif" }}
     >
-      <h1 className="text-4xl font-light tracking-tight">
+      <h1
+        className="text-4xl font-light tracking-tight"
+        style={{ color: accent }}
+      >
         {data.fullName || "Your Name"}
       </h1>
 
@@ -274,7 +351,10 @@ function MinimalTemplate({ data, id }: { data: CVData; id: string }) {
         {data.location && <span>{data.location}</span>}
       </div>
 
-      <hr className="my-6 border-slate-200" />
+      <hr
+        className="my-6 border-slate-200"
+        style={{ borderColor: `${accent}33` }}
+      />
 
       {data.summary && (
         <section className="mb-6">

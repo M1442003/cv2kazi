@@ -1,13 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = {
   variable: "--font-inter",
-  display: "swap",
-});
+};
 
 export const metadata: Metadata = {
   title: {
