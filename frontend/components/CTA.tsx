@@ -20,13 +20,13 @@ export default function CTA() {
             href="/analyze"
             className="bg-white hover:bg-slate-100 text-brand-red font-bold px-6 sm:px-8 py-3.5 rounded-full transition shadow-lg text-sm sm:text-base"
           >
-            Analyze CV — Free
+            AnalyzeCV-Free
           </Link>
           <Link
             href="/create"
             className="border-2 border-white/70 hover:bg-white/10 text-white font-semibold px-6 sm:px-8 py-3.5 rounded-full transition text-sm sm:text-base"
           >
-            Build a New CV
+            Build NewCV
           </Link>
         </div>
 
