@@ -101,7 +101,7 @@ export default function ModifyPage() {
             disabled={!bullet.trim() || loading}
             className="bg-brand-red hover:bg-brand-darkred text-white font-semibold px-6 py-2.5 rounded-full transition shadow-sm disabled:opacity-50"
           >
-            {loading ? "Rewriting..." : "✨ Rewrite it"}
+            {loading ? "Rewriting..." : " Rewrite it"}
           </button>
 
           {error && (
@@ -114,7 +114,7 @@ export default function ModifyPage() {
         {result && (
           <div className="mt-6 bg-green-50 p-6 rounded-2xl border border-green-200">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-bold text-slate-900">✨ Improved version</h3>
+              <h3 className="font-bold text-slate-900">Improved version</h3>
               <button
                 onClick={copyResult}
                 className="text-xs font-semibold text-green-700 hover:underline"
@@ -136,15 +136,15 @@ export default function ModifyPage() {
           </h3>
           <ul className="space-y-2 text-sm text-slate-700">
             <li>
-              ✅ <b>Start with an action verb</b> — Engineered, Led, Built,
+              <b>Start with an action verb</b> — Engineered, Led, Built,
               Improved, Reduced
             </li>
             <li>
-              ✅ <b>Include metrics</b> — numbers, %, TZS, team size, time
+              <b>Include metrics</b> — numbers, %, TZS, team size, time
               saved
             </li>
             <li>
-              ✅ <b>Say the impact</b> — what changed because of your work
+              <b>Say the impact</b> — what changed because of your work
             </li>
             <li>
               ❌ Avoid weak phrases — "Responsible for", "Helped with",

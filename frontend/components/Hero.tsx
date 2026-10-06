@@ -35,6 +35,7 @@ export default function Hero() {
             >
               Build CV
             </Link>
+            
           </div>
 
           {/* Trust line */}
