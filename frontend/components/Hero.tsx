@@ -70,13 +70,13 @@ export default function Hero() {
                 href="/analyze"
                 className="bg-brand-red hover:bg-brand-darkred text-white font-bold px-7 py-3.5 rounded-full shadow-lg shadow-brand-red/30 transition"
               >
-                Analyze CV — Free
+                AnalyzeCV-Free
               </Link>
               <Link
                 href="/create"
                 className="bg-white border-2 border-slate-300 hover:border-brand-red hover:text-brand-red text-slate-800 font-semibold px-7 py-3.5 rounded-full transition"
               >
-                Build CV — Free
+                Build CV
               </Link>
             </div>
 
