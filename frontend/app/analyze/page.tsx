@@ -85,7 +85,7 @@ function Results({ data }: { data: any }) {
           {ai.strengths?.length > 0 && (
             <div>
               <h3 className="font-semibold mb-2 text-slate-900">
-                ✅ Strengths
+                Strengths
               </h3>
               <ul className="list-disc pl-5 text-sm space-y-1 text-slate-700">
                 {ai.strengths.map((s: string, i: number) => (
@@ -98,7 +98,7 @@ function Results({ data }: { data: any }) {
           {ai.weaknesses?.length > 0 && (
             <div>
               <h3 className="font-semibold mb-2 text-slate-900">
-                ⚠️ Weaknesses
+                Weaknesses
               </h3>
               <ul className="list-disc pl-5 text-sm space-y-1 text-slate-700">
                 {ai.weaknesses.map((s: string, i: number) => (
@@ -111,7 +111,7 @@ function Results({ data }: { data: any }) {
           {ai.improvements?.length > 0 && (
             <div>
               <h3 className="font-semibold mb-2 text-slate-900">
-                🔧 Improvements
+                Improvements
               </h3>
               <ul className="space-y-3 text-sm">
                 {ai.improvements.map((imp: any, i: number) => (
