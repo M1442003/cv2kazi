@@ -145,7 +145,7 @@ function Results({ data }: { data: any }) {
           {ai.rewritten_summary && (
             <div className="bg-green-50 p-5 rounded-xl border border-green-200">
               <h3 className="font-semibold mb-2 text-slate-900">
-                ✨ Rewritten summary
+                 Rewritten summary
               </h3>
               <p className="text-sm text-slate-700 leading-relaxed">
                 {ai.rewritten_summary}
@@ -164,7 +164,7 @@ function Results({ data }: { data: any }) {
       {/* ⬇️ This block is now INSIDE the return, above </div> */}
       {(rules || ai.overall_score !== undefined) && (
         <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
-          <div className="text-4xl mb-2">💼</div>
+          <div className="text-4xl mb-2"></div>
           <h3 className="font-bold text-lg text-slate-900 mb-1">
             Ready to find matching jobs?
           </h3>
@@ -176,7 +176,7 @@ function Results({ data }: { data: any }) {
             href="/jobs"
             className="inline-block bg-brand-lightblue hover:bg-brand-blue text-white font-bold px-8 py-3 rounded-full transition shadow-sm"
           >
-            Find Jobs Matching My CV →
+            Find Jobs Matching CV
           </Link>
         </section>
       )}
