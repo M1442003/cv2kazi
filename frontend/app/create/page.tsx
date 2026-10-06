@@ -110,7 +110,7 @@ export default function CreatePage() {
                 onClick={() => setStep("pick")}
                 className="text-sm text-slate-500 hover:text-brand-red transition mb-3 inline-block"
               >
-                ← Back to templates
+                 Back to Templates
               </button>
               <h1 className="text-2xl sm:text-3xl font-extrabold mb-2 text-slate-900">
                 Your Details
