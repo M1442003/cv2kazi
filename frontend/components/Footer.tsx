@@ -57,7 +57,7 @@ export default function Footer() {
               <a
                 href="mailto:hello@cv2kazi.tz"
                 className="hover:text-white transition"
-              >
+              > +255 625 334 067
                 husseinmatolak@cv2kazi.tz
               </a>
             </li>
