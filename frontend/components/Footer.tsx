@@ -52,13 +52,39 @@ export default function Footer() {
           <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
             Contact
           </h4>
+
           <ul className="space-y-2 text-sm">
+            {/* Email */}
             <li>
               <a
-                href="mailto:hello@cv2kazi.tz"
+                href="mailto:husseinmatolak@cv2kazi.tz"
                 className="hover:text-white transition"
-              > +255 625 334 067
-                husseinmatolak@cv2kazi.tz
+              >
+                📧 husseinmatolak@cv2kazi.tz
+              </a>
+            </li>
+
+            {/* WhatsApp */}
+            <li>
+              <a
+                href="https://wa.me/255625334067"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
+                💬 WhatsApp
+              </a>
+            </li>
+
+            {/* Telegram */}
+            <li>
+              <a
+                href="https://t.me/Matolacrypto"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
+                ✈️ Telegram
               </a>
             </li>
           </ul>
