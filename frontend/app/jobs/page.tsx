@@ -66,7 +66,7 @@ export default function JobsPage() {
           href="/"
           className="text-sm text-slate-500 hover:text-brand-red transition mb-4 inline-block"
         >
-          ⏪Back to home
+           🔙Back to home
         </Link>
 
         <header className="mb-8">
@@ -116,7 +116,7 @@ export default function JobsPage() {
             disabled={!cvText.trim() || loading}
             className="w-full sm:w-auto bg-brand-red hover:bg-brand-darkred text-white font-bold px-8 py-3 rounded-full transition shadow-sm disabled:opacity-50"
           >
-            {loading ? "Matching jobs…" : "🔍 Find Matching Jobs"}
+            {loading ? "Matching jobs…" : "Find Matching Jobs"}
           </button>
 
           {error && (
