@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CV2Kazi — From good CV to getting a job",
     description:
-      "Free AI-powered CV feedback for Tanzania. 🇹🇿",
+      "Free AI-powered CV feedback for Tanzania.",
     images: ["/og-image.svg"],
   },
   robots: { index: true, follow: true },
