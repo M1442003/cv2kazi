@@ -60,7 +60,7 @@ export default function Footer() {
                 href="mailto:husseinmatolak@cv2kazi.tz"
                 className="hover:text-white transition"
               >
-                📧 husseinmatolak@cv2kazi.tz
+                husseinmatolak@cv2kazi.tz
               </a>
             </li>
 
@@ -72,7 +72,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-white transition"
               >
-                💬 WhatsApp
+                WhatsApp
               </a>
             </li>
 
@@ -84,7 +84,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-white transition"
               >
-                ✈️ Telegram
+              Telegram
               </a>
             </li>
           </ul>
