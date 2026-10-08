@@ -50,13 +50,7 @@ export default function ModifyPage() {
       <Navbar />
 
       <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <Link
-          href="/"
-          className="text-sm text-slate-500 hover:text-brand-red transition mb-4 inline-block"
-        >
-          🔙 Back to home
-        </Link>
-
+ 
         <header className="mb-8">
           <div className="inline-block mb-3 px-4 py-1.5 bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider rounded-full">
             Modify
