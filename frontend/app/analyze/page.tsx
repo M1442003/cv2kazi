@@ -12,13 +12,7 @@ export default function AnalyzePage() {
     <>
       <Navbar />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <Link
-          href="/"
-          className="text-sm text-slate-500 hover:text-brand-red transition mb-4 inline-block"
-        >
-          🔙 Back to home
-        </Link>
-
+    
         <header className="mb-8">
           <h1 className="text-2xl sm:text-3xl font-extrabold mb-2 text-slate-900">
             Analyze Your CV
