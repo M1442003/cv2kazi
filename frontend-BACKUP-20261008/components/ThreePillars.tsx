@@ -105,7 +105,7 @@ export default function ThreePillars() {
                 href={p.href}
                 className="block text-center bg-slate-900 hover:bg-brand-red text-white font-semibold px-5 py-3 rounded-full transition"
               >
-                {p.cta} 
+                {p.cta} →
               </Link>
             </div>
           ))}

@@ -86,7 +86,7 @@ export default function PhoneMockup() {
 
               {/* Fake CTA inside phone */}
               <div className="mt-3 bg-brand-red text-white text-center text-[9px] font-bold py-2 rounded-full">
-                Analyze My CV 
+                Analyze My CV →
               </div>
 
               {/* Bottom home indicator */}

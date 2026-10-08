@@ -187,7 +187,7 @@ export default function UploadForm({
         disabled={!file || loading}
         className="w-full bg-brand-red hover:bg-brand-darkred text-white font-bold px-6 py-3 rounded-full transition shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {loading ? "Analyzing…" : "Analyze CV "}
+        {loading ? "Analyzing…" : "Analyze CV →"}
       </button>
 
       {error && (

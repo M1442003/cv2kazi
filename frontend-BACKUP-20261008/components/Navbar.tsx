@@ -167,7 +167,7 @@ export default function Navbar() {
                             onClick={() => setOpen(false)}
                             className="block bg-brand-red hover:bg-brand-darkred text-white text-center font-bold py-3.5 rounded-full shadow-lg shadow-brand-red/30 transition"
                         >
-                            Get Started Free 
+                            Get Started Free →
                         </Link>
                     </div>
                 </div>

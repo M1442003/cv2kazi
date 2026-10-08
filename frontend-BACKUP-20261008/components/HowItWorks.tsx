@@ -53,7 +53,7 @@ export default function HowItWorks() {
             href="/analyze"
             className="inline-block bg-brand-red hover:bg-brand-darkred text-white font-bold px-10 py-4 rounded-full shadow-lg shadow-brand-red/30 transition"
           >
-            Try It Free 
+            Try It Free →
           </Link>
         </div>
       </div>
