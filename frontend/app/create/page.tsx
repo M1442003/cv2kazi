@@ -54,7 +54,7 @@ export default function CreatePage() {
           href="/"
           className="text-sm text-slate-500 hover:text-brand-red transition mb-4 inline-block"
         >
-          🔙 Back to home
+          Back to home
         </Link>
 
         {/* ═══════ STEP 1 — Pick a template ═══════ */}
