@@ -7,13 +7,7 @@ export default function TermsPage() {
     <>
       <Navbar />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-        <Link
-          href="/"
-          className="text-sm text-slate-500 hover:text-brand-red transition mb-4 inline-block"
-        >
-          🔙 Back to home
-        </Link>
-
+        
         <h1 className="text-2xl sm:text-3xl font-extrabold mb-2 text-slate-900">
           Terms of Service
         </h1>
