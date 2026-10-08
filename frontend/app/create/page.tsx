@@ -93,7 +93,7 @@ export default function CreatePage() {
                 onClick={() => setStep("build")}
                 className="bg-brand-red hover:bg-brand-darkred text-white font-bold px-10 py-4 rounded-full shadow-lg shadow-brand-red/30 transition text-base"
               >
-                Build Now →
+                Build Now
               </button>
               <p className="text-xs text-slate-500 mt-3">
                 You can change the template anytime.
