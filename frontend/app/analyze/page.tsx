@@ -122,7 +122,7 @@ function Results({ data }: { data: any }) {
                     <b className="text-slate-900">{imp.section}:</b>{" "}
                     <span className="text-slate-700">{imp.issue}</span>
                     <br />
-                    <span className="text-green-700">→ {imp.fix}</span>
+                    <span className="text-green-700">{imp.fix}</span>
                   </li>
                 ))}
               </ul>
