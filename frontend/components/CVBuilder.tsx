@@ -242,7 +242,7 @@ export default function CVBuilder({
       {/* Education */}
       <section>
         <div className="flex items-center justify-between mb-3">
-          <h3 className="font-bold text-slate-900">🎓 Education</h3>
+          <h3 className="font-bold text-slate-900">Education</h3>
           <button
             type="button"
             onClick={addEdu}
