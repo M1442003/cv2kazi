@@ -136,13 +136,13 @@ export default function CreatePage() {
                 onClick={() => downloadPdf("cv-preview", getFileName())}
                 className="bg-brand-red hover:bg-brand-darkred text-white font-semibold px-6 py-2.5 rounded-full transition shadow-sm"
               >
-                ⬇️ Download PDF
+                Download PDF
               </button>
               <button
                 onClick={printCV}
                 className="hidden sm:inline-block border border-slate-300 hover:border-slate-400 text-slate-700 font-semibold px-6 py-2.5 rounded-full transition"
               >
-                🖨️ Print
+                Print
               </button>
               <button
                 onClick={() => setData(EMPTY_CV)}
