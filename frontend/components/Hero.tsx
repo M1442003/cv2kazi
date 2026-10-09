@@ -20,8 +20,6 @@ export default function Hero() {
             <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-brand-lightblue/10 rounded-full blur-3xl pointer-events-none" />
             <PhoneMockup />
           </div>
-
-          {/* CTAs — stacked, full width */}
           {/* CTAs — stacked, full width */}
           <div className="w-full max-w-sm flex flex-col gap-3">
             <Link
