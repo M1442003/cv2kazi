@@ -38,12 +38,17 @@ const IconJobs = () => (
         <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
     </svg>
 );
-
+const IconImprove = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <path d="M12 3v3m0 12v3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M3 12h3m12 0h3M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1" />
+    </svg>
+);
 export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     const desktopLinks = [
         { href: "/", label: "Home" },
+        { href: "/improve", label: "Improve" },
         { href: "/jobs", label: "Find Jobs" },
         { href: "/#how", label: "How It Works" },
     ];
@@ -52,6 +57,7 @@ export default function Navbar() {
         { href: "/", label: "Home", Icon: IconHome },
         { href: "/analyze", label: "Analyze", Icon: IconAnalyze },
         { href: "/modify", label: "Review", Icon: IconReview },
+        { href: "/improve", label: "Improve CV", Icon: IconImprove },
         { href: "/create", label: "Build", Icon: IconBuild },
         { href: "/jobs", label: "Find Jobs", Icon: IconJobs },
     ];
@@ -167,7 +173,7 @@ export default function Navbar() {
                             onClick={() => setOpen(false)}
                             className="block bg-brand-red hover:bg-brand-darkred text-white text-center font-bold py-3.5 rounded-full shadow-lg shadow-brand-red/30 transition"
                         >
-                            Get Started Free 
+                            Get Started Free
                         </Link>
                     </div>
                 </div>

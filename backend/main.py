@@ -121,6 +121,90 @@ Original bullet: {bullet}
             raise HTTPException(500, f"Rewrite failed: {e}")
 
     raise HTTPException(500, "Rewrite failed after retries.")
+
+# -------------------- /improve --------------------
+@app.post("/improve")
+async def improve_cv(file: UploadFile = File(...)):
+    """Rewrite an entire CV with AI and return structured data."""
+    if not file.filename.lower().endswith((".pdf", ".docx")):
+        raise HTTPException(400, "Only PDF or DOCX allowed.")
+
+    data = await file.read()
+    if len(data) > 5 * 1024 * 1024:
+        raise HTTPException(400, "File too large (max 5MB).")
+
+    try:
+        cv_text = extract_text(data, file.filename)
+    except Exception as e:
+        raise HTTPException(400, f"Parse error: {e}")
+
+    if len(cv_text.strip()) < 50:
+        raise HTTPException(400, "Could not read CV text. Try a text-based PDF or DOCX.")
+
+    prompt = f"""You are a CV writing expert for the Tanzanian job market.
+
+Rewrite the CV below to be more impactful, metric-driven, and ATS-friendly.
+RULES:
+- Keep all facts accurate (do not invent employers, degrees, or dates)
+- Use strong action verbs (Led, Built, Reduced, Engineered)
+- Where metrics would strengthen a bullet, insert placeholders like [X]%
+- Keep bullets concise (max 25 words each)
+- Write in English unless the original is mostly Swahili
+- Be professional and specific
+
+Return ONLY valid JSON in this exact shape (no markdown fences, no commentary):
+
+{{
+  "fullName": "...",
+  "email": "...",
+  "phone": "...",
+  "location": "...",
+  "summary": "...",
+  "experience": [
+    {{"role": "...", "company": "...", "dates": "...", "bullets": "First bullet\\nSecond bullet\\nThird bullet"}}
+  ],
+  "education": [
+    {{"school": "...", "degree": "...", "year": "..."}}
+  ],
+  "skills": "...",
+  "languages": "..."
+}}
+
+ORIGINAL CV:
+---
+{cv_text[:8000]}
+---
+"""
+
+    for attempt in range(3):
+        try:
+            resp = gemini_model.generate_content(prompt)
+            raw = resp.text.strip()
+            cleaned = re.sub(r"^```json|```$", "", raw, flags=re.MULTILINE).strip()
+            parsed = json.loads(cleaned)
+
+            # Fill missing fields
+            parsed.setdefault("fullName", "")
+            parsed.setdefault("email", "")
+            parsed.setdefault("phone", "")
+            parsed.setdefault("location", "")
+            parsed.setdefault("summary", "")
+            parsed.setdefault("experience", [])
+            parsed.setdefault("education", [])
+            parsed.setdefault("skills", "")
+            parsed.setdefault("languages", "")
+
+            return {"cv": parsed}
+
+        except Exception as e:
+            msg = str(e)
+            if ("429" in msg or "quota" in msg.lower()) and attempt < 2:
+                print(f"[improve] rate limited, waiting 15s (attempt {attempt+1})")
+                time.sleep(15)
+                continue
+            raise HTTPException(500, f"Rewrite failed: {e}")
+
+    raise HTTPException(500, "Rewrite failed after retries.")
 # -------------------- Jobs --------------------
 
 class JobMatchRequest(BaseModel):

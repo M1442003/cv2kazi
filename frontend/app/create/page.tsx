@@ -9,6 +9,7 @@ import CVPreview, {
   TemplateColorId,
 } from "@/components/CVPreview";
 import TemplatePicker from "@/components/TemplatePicker";
+import { useEffect } from "react";
 
 // Load html2pdf dynamically (client-only)
 const downloadPdf = async (elementId: string, fileName: string) => {
@@ -33,6 +34,18 @@ export default function CreatePage() {
   const [data, setData] = useState<CVData>(EMPTY_CV);
   const [template, setTemplate] = useState<TemplateId>("classic");
   const [color, setColor] = useState<TemplateColorId>("red");
+  
+  useEffect(() => {
+    const saved = localStorage.getItem("cv2kazi_improved_cv");
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        setData(parsed);
+        setStep("build");
+        localStorage.removeItem("cv2kazi_improved_cv");
+      } catch {}
+    }
+  }, []);
 
   function printCV() {
     window.print();
