@@ -76,7 +76,6 @@ export default function ImprovePage() {
           image: { type: "jpeg", quality: 0.98 },
           html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
           jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
-          pagebreak: { mode: ["avoid-all", "css", "legacy"] },
         })
         .from(el)
         .save();
@@ -93,13 +92,7 @@ export default function ImprovePage() {
     <>
       <Navbar />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <Link
-          href="/"
-          className="text-sm text-slate-500 hover:text-brand-red transition mb-4 inline-block"
-        >
-          ← Back
-        </Link>
-
+       
         <header className="mb-8 text-center">
           <div className="inline-block mb-3 px-4 py-1.5 bg-brand-red/10 text-brand-red text-xs font-bold uppercase tracking-wider rounded-full">
             Full CV Rewrite
