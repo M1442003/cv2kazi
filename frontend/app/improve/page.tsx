@@ -164,15 +164,7 @@ export default function ImprovePage() {
               >
                 Edit in Builder
               </button>
-              <button
-                onClick={() => {
-                  setImproved(null);
-                  setFile(null);
-                }}
-                className="border border-slate-300 hover:border-slate-400 text-slate-700 font-semibold px-6 py-3 rounded-full transition"
-              >
-                Try Another
-              </button>
+
             </div>
 
             <div className="max-w-2xl mx-auto">
