@@ -215,9 +215,9 @@ function ModernTemplate({
           {data.fullName || "Your Name"}
         </h1>
         <div className="text-xs mt-2 flex flex-wrap gap-x-4 gap-y-1 text-white/80">
-          {data.email && <span>✉ {data.email}</span>}
-          {data.phone && <span>☎ {data.phone}</span>}
-          {data.location && <span>📍 {data.location}</span>}
+          {data.email && <span>{data.email}</span>}
+          {data.phone && <span>{data.phone}</span>}
+          {data.location && <span>{data.location}</span>}
         </div>
       </div>
 
