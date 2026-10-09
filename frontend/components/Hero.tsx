@@ -36,7 +36,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/improve"
-              className="bg-slate-900 hover:bg-black text-white font-bold py-3.5 rounded-full shadow-lg shadow-slate-900/30 transition text-center text-sm"
+              className="bg-white border-2 border-slate-300 hover:border-brand-red hover:text-brand-red text-slate-800 font-semibold py-3.5 rounded-full transition text-center text-sm"
             >
               Improve with AI
             </Link>
