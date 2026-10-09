@@ -22,20 +22,26 @@ export default function Hero() {
           </div>
 
           {/* CTAs — stacked, full width */}
+          {/* CTAs — stacked, full width */}
           <div className="w-full max-w-sm flex flex-col gap-3">
             <Link
               href="/analyze"
               className="bg-brand-red hover:bg-brand-darkred text-white font-bold py-3.5 rounded-full shadow-lg shadow-brand-red/30 transition text-center text-sm"
             >
-              AnalyzeCV
+              AnalyzeCV-Free
             </Link>
             <Link
               href="/create"
               className="bg-white border-2 border-slate-300 hover:border-brand-red hover:text-brand-red text-slate-800 font-semibold py-3.5 rounded-full transition text-center text-sm"
             >
-              Build CV
+              BuildCV
             </Link>
-            
+            <Link
+              href="/improve"
+              className="bg-slate-900 hover:bg-black text-white font-bold py-3.5 rounded-full shadow-lg shadow-slate-900/30 transition text-center text-sm"
+            >
+              Improve with AI
+            </Link>
           </div>
 
           {/* Trust line */}
@@ -65,18 +71,25 @@ export default function Hero() {
               bullet rewriting, and real jobs in Tanzania.
             </p>
 
-            <div className="mt-7 flex gap-3">
+            {/* CTAs — stacked, full width */}
+            <div className="w-full max-w-sm flex flex-col gap-3">
               <Link
                 href="/analyze"
-                className="bg-brand-red hover:bg-brand-darkred text-white font-bold px-7 py-3.5 rounded-full shadow-lg shadow-brand-red/30 transition"
+                className="bg-brand-red hover:bg-brand-darkred text-white font-bold py-3.5 rounded-full shadow-lg shadow-brand-red/30 transition text-center text-sm"
               >
                 AnalyzeCV-Free
               </Link>
               <Link
                 href="/create"
-                className="bg-white border-2 border-slate-300 hover:border-brand-red hover:text-brand-red text-slate-800 font-semibold px-7 py-3.5 rounded-full transition"
+                className="bg-white border-2 border-slate-300 hover:border-brand-red hover:text-brand-red text-slate-800 font-semibold py-3.5 rounded-full transition text-center text-sm"
               >
-                Build CV
+                BuildCV
+              </Link>
+              <Link
+                href="/improve"
+                className="bg-slate-900 hover:bg-black text-white font-bold py-3.5 rounded-full shadow-lg shadow-slate-900/30 transition text-center text-sm"
+              >
+                Improve with AI
               </Link>
             </div>
 
