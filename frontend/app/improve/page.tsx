@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CVPreview, { TemplateId, TemplateColorId } from "@/components/CVPreview";
 import type { CVData } from "@/components/CVBuilder";
+import FileDropZone from "@/components/FileDropZone";
 
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
@@ -92,7 +93,7 @@ export default function ImprovePage() {
     <>
       <Navbar />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-       
+
         <header className="mb-8 text-center">
           <div className="inline-block mb-3 px-4 py-1.5 bg-brand-red/10 text-brand-red text-xs font-bold uppercase tracking-wider rounded-full">
             Full CV Rewrite
@@ -111,17 +112,11 @@ export default function ImprovePage() {
             onSubmit={improve}
             className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-5 max-w-lg mx-auto"
           >
-            <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-2">
-                Upload your current CV
-              </label>
-              <input
-                type="file"
-                accept=".pdf,.docx"
-                onChange={(e) => setFile(e.target.files?.[0] || null)}
-                className="block w-full text-sm"
-              />
-            </div>
+            <FileDropZone
+              file={file}
+              onFileChange={setFile}
+              label="Upload your current CV"
+            />
 
             <button
               type="submit"
