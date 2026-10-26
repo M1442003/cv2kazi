@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app/**/*.{ts,tsx}",
@@ -8,8 +7,8 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          red: "#dc4e26",
-          darkred: "#1cb9b9",
+          red: "#DC2626",
+          darkred: "#B91C1C",
           blue: "#1E3A8A",
           lightblue: "#2563EB",
           cream: "#F8FAFC",
@@ -18,18 +17,13 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
-
       animation: {
-        "float-rotate": "floatRotate 8s ease-in-out infinite",
+        "float-rotate": "floatRotate 12s linear infinite",
       },
       keyframes: {
         floatRotate: {
-          "0%, 100%": {
-            transform: "rotateY(-15deg) translateY(0px)",
-          },
-          "50%": {
-            transform: "rotateY(15deg) translateY(-12px)",
-          },
+          "0%":   { transform: "rotateY(0deg)" },
+          "100%": { transform: "rotateY(360deg)" },
         },
       },
     },
