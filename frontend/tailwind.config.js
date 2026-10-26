@@ -18,12 +18,16 @@ module.exports = {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       animation: {
-        "float-rotate": "floatRotate 12s linear infinite",
+        "float-rotate": "floatRotate 8s ease-in-out infinite",
       },
       keyframes: {
         floatRotate: {
-          "0%":   { transform: "rotateY(0deg)" },
-          "100%": { transform: "rotateY(360deg)" },
+          "0%, 100%": {
+            transform: "rotateY(-15deg) translateY(0px)",
+          },
+          "50%": {
+            transform: "rotateY(15deg) translateY(-12px)",
+          },
         },
       },
     },
