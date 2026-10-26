@@ -72,15 +72,15 @@ export default function Hero() {
 
             {/* CTAs — stacked, full width */}
             <div className="w-full max-w-sm flex flex-col gap-3">
-                 <Link
+              <Link
                 href="/create"
-                className="bg-white border-2 border-slate-300 hover:border-brand-red hover:text-brand-red text-slate-800 font-semibold py-3.5 rounded-full transition text-center text-sm"
+                className="bg-brand-red hover:bg-brand-darkred text-white font-bold py-3.5 rounded-full shadow-lg shadow-brand-red/30 transition text-center text-sm"
               >
                 BuildCV-Free
               </Link>
               <Link
                 href="/analyze"
-                className="bg-brand-red hover:bg-brand-darkred text-white font-bold py-3.5 rounded-full shadow-lg shadow-brand-red/30 transition text-center text-sm"
+                className="bg-white border-2 border-slate-300 hover:border-brand-red hover:text-brand-red text-slate-800 font-semibold py-3.5 rounded-full transition text-center text-sm"
               >
                 AnalyzeCV
               </Link>
